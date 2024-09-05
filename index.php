@@ -40,6 +40,14 @@
 
     ];
 
+    $tableHeaders = [
+        'Nome',
+        'Descrizione',
+        'Parcheggio',
+        'Voto',
+        'Distanza dal Centro (km)'
+    ];
+
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +56,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>PHP-Hotel</title>
 </head>
 <body>
@@ -55,13 +64,11 @@
 <div class="container mt-5">
     <h1 class="mb-4">Elenco degli Hotel</h1>
     <table class="table table-striped">
-        <thead>
+        <thead class="bg-green">
             <tr>
-                <th>Nome</th>
-                <th>Descrizione</th>
-                <th>Parcheggio</th>
-                <th>Voto</th>
-                <th>Distanza dal Centro (km)</th>
+            <?php foreach ($tableHeaders as $header) { ?>
+                    <th><?php echo $header; ?></th>
+                <?php } ?>
             </tr>
         </thead>
         <tbody>
@@ -70,7 +77,13 @@
                     <td><?php echo $hotel['name']; ?></td>
                     <td><?php echo $hotel['description']; ?></td>
                     <td><?php echo $hotel['parking'] ? 'Sì' : 'No'; ?></td>
-                    <td><?php echo $hotel['vote']; ?></td>
+                    <td><?php for($i=0; $i < 5; $i++) {
+                        if($i < $hotel['vote']) {
+                            echo '<i class="bi bi-star-fill text-warning"></i>';
+                        } else {
+                            echo '<i class="bi bi-star text-warning"></i>';
+                        }
+                    } ?></td>
                     <td><?php echo $hotel['distance_to_center']; ?></td>
                 </tr>
             <?php } ?>
