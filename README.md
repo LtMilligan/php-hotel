@@ -1,0 +1,3 @@
+- Importo nella sezione PHP l'array che si deve lavorare
+- Strutturo la parte HTML andando ad importare le dipendenza di BOOTSTRAP
+- Creo una tabella con la prima riga di campi comuni e la riempio andando a fare un FOREACH dell'array in modo da avere tutte le chiavi che mi occorrono per andare a stampare i valori
