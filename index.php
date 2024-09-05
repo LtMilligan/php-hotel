@@ -51,7 +51,21 @@
     <title>PHP-Hotel</title>
 </head>
 <body>
-    
+
+<div class="container mt-5">
+    <h1 class="mb-4">Elenco degli Hotel</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrizione</th>
+                <th>Parcheggio</th>
+                <th>Voto</th>
+                <th>Distanza dal Centro (km)</th>
+            </tr>
+        </thead>
+    </table>
+</div>
 
 
 
